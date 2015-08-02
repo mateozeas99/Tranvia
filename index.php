@@ -1,7 +1,7 @@
 <?php
 require_once 'core/init.php';
 $user = new User();
-//if ($user->isLoggedIn())
+if ($user->isLoggedIn())
 {
 	include 'paginas/header.php';
 ?>
@@ -10,22 +10,22 @@ $user = new User();
         <div class="col s12 m6">
           <div class="card white hoverable">
             <div class="card-content center-align">
-	        	<a href="patient">
-	      			<img src="img/patient.png" width="64" >
+	        	<a href="dashboard.php">
+	      			<img src="img/humidity.png" width="64" >
 	      		</a>
 	      		<br>
               	<span class="card-title black-text">Dashboard</span>
               	<p>Controladores/Sensores</p>
             </div>
             <div class="card-action center-align">
-            	<a href="patient" class="waves-effect white-text btn blue darken-2">Ingresar</a>
+            	<a href="dashboard.php" class="waves-effect white-text btn amber">Ingresar</a>
             </div>
           </div>
         </div>
         <div class="col s12 m6">
           <div class="card white hoverable">
             <div class="card-content center-align">
-	            <a href="configurations">
+	            <a href="configurations.php">
 	          		<img src="img/settings.png" width="64">
 				</a>
 				<br>
@@ -33,7 +33,7 @@ $user = new User();
               	<p>Usuarios/Contraladores/Grupos</p>
             </div>
             <div class="card-action center-align">
-            	<a href="configurations" class="waves-effect white-text btn blue darken-2">Ingresar</a>
+            	<a href="configurations.php" class="waves-effect white-text btn amber">Ingresar</a>
             </div>
           </div>
         </div>
@@ -42,8 +42,8 @@ $user = new User();
 <?php
 	include 'paginas/footer.php';
 }
-/*else
+else
 {
 	include 'login.php';
-}*/
+}
 ?>

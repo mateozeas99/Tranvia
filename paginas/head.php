@@ -7,4 +7,14 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      	<script>
+	<?php
+		$session = Session::get(Config::get('session/session_name'));
+		$apiKey = Session::get(Config::get('session/api_key_name'));
+		$user=new User($session);
+		$uname=$user->data()->USERNAME;
+		echo 'var apiKey = \''.$apiKey.'\';';
+		echo 'var user = \''.$uname.'\';'; 
+	?>
+	</script>
   </head>

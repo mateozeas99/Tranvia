@@ -12,7 +12,14 @@ use MyApp\Chat;
     			new Chat()
     			)
     		),
-        8080
+        4040
     );
+    /*
+    $server = IoServer::factory(
+        new Chat(),
+        4040
+    );
+
+     */
 
     $server->run();

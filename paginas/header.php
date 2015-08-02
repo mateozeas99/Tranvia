@@ -4,8 +4,8 @@
   <body>
 	<header>
 	  <nav>
-	    <div class="nav-wrapper blue darken-1">
-	      <a href="../index.html" class="brand-logo center">Sináptica</a>
+	    <div class="nav-wrapper amber">
+	      <a href="index.php" class="brand-logo left"><img src="img/logo.png" width="400" height="65"></a>
 	    </div>
 	  </nav>
 	</header>

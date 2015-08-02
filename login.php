@@ -41,6 +41,7 @@
 						$apiKeyName = Config::get('session/api_key_name');
 						Session::put($sessionName, $json->id);
 						Session::put($apiKeyName, $json->api_key);
+						echo "$apiKeyName";
 						Redirect::to('index.php');
 				}
 			}
@@ -58,17 +59,17 @@
 
 <head>
   <title>Tranvia</title>
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/fonts.googleapis.css" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
-
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 <header>
   <nav>
-    <div class="nav-wrapper blue darken-1">
-      <a href="../index.html" class="brand-logo center">Sináptica</a>
+    <div class="nav-wrapper amber">
+      <a href="index.php" class="brand-logo left"><img src="img/logo.png" width="400" height="65"></a>
     </div>
   </nav>
 </header>
@@ -78,14 +79,14 @@
     <form class="col s12" action="" method="POST">
       <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
+          <!--<i class="material-icons prefix">account_circle</i>-->
           <input id="username" type="text" name="username" class="validate">
           <label for="username">Username</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">security</i>
+          <!--<i class="material-icons prefix">security</i>-->
           <input id="password" type="password" name="password" class="validate">
           <label for="password">Password</label>
         </div>
@@ -96,8 +97,8 @@
         <input type="hidden" name="token" value="<?php echo Token::generate();?>">
       </div>
       <div class="row">
-        <button class="btn waves-effect waves-light blue blue darken-2" type="submit" name="action">Login
-          <i class="material-icons">send</i>
+        <button class="btn waves-effect waves-light blue amber" type="submit" name="action">Login
+          <!--<i class="material-icons">send</i>-->
         </button>
       </div>
       <div class="row">
@@ -107,7 +108,7 @@
   </div>
 </div>
 </main>
-<footer class="page-footer blue darken-1">
+<footer class="page-footer amber">
   <div class="footer-copyright">
     <div class="container center">
     © 2014 Copyright

@@ -5,19 +5,16 @@ $GLOBALS['config'] = array(
 			'host' => 'localhost',
 			'username' => 'root',
 			'password' => 'root',
-			'db' => 'malgiac_oftalmologico'
+			'db' => 'sinaptica'
 		),
 	'remember'=>array(
 		'cookie_name'=> 'hash',
-		'cookie_expiry'=> 31536000
+		'cookie_expiry'=> 604800
 		),
 	'session' => array(
 		'session_name'=>'user',
-		'token_name' => 'token'
-		),
-	'pagination' => array(
-		'maxreg' => 10,
-		'adjacents' => 3
+		'token_name' => 'token',
+		'api_key_name' => 'api_key'
 		)
 	);
 spl_autoload_register(function($class){

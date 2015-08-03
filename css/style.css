@@ -17,3 +17,8 @@ flex: 1 0 auto;
 	padding-left: 15px;
 	padding-right: 15px;
 }
+.scroll
+{
+	overflow: auto;
+	height: 200px;
+}

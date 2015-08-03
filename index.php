@@ -1,7 +1,7 @@
 <?php
 require_once 'core/init.php';
 $user = new User();
-if ($user->isLoggedIn())
+//if ($user->isLoggedIn())
 {
 	include 'paginas/header.php';
 ?>
@@ -42,8 +42,8 @@ if ($user->isLoggedIn())
 <?php
 	include 'paginas/footer.php';
 }
-else
+/*else
 {
 	include 'login.php';
-}
+}*/
 ?>

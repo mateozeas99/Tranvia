@@ -1,7 +1,7 @@
 <?php
 require_once 'core/init.php';
 $user = new User();
-if ($user->isLoggedIn())
+//if ($user->isLoggedIn())
 {
 	include 'paginas/header.php';
 ?>
@@ -77,11 +77,11 @@ if ($user->isLoggedIn())
                           </label>
                         </div></td>
                     </tr>
-                    <tr>
+                    <!--<tr>
                       <td>5</td>
                       <td>Mariscal Lamar</td>
                       <td class="hide-on-small-only">Centro</td>
-                      <td><!-- Switch -->
+                      <td>
                         <div class="switch">
                           <label>
                             Off
@@ -90,31 +90,132 @@ if ($user->isLoggedIn())
                             On
                           </label>
                         </div></td>
-                    </tr>
+                    </tr>-->
                   </tbody>
                 </table>
             </div>
             <div class="card-action center-align">
-              <a  class="waves-effect white-text btn amber">Prender Todo</a>
-              <a  class="waves-effect white-text btn amber">Apagar Todo</a>
+              <a onclick="allSwitch(1);" class="waves-effect white-text btn amber">Prender Todo</a>
+              <a onclick="allSwitch(0);" class="waves-effect white-text btn amber">Apagar Todo</a>
             </div>
           </div>
         </div>
       </div>
-</div>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card white hoverable">
+            <div class="card-content center-align">
+              <span class="card-title black-text">Historial</span>
+              <div class="scroll">
+                <table class="striped centered">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Hora</th>
+                      <th>Desc.</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>12:05:54</td>
+                      <td>Problema</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 <?php
 	include 'paginas/footer.php';
 }
-else
+/*else
 {
 	include 'login.php';
-}
+}*/
 ?>
 <script type="text/javascript">
   $( document ).ready(function() {
     // Handler for .ready() called.
     // document.getElementById("switch-1").checked=true;
     connectWebSocket();
-
+    initial('dashboard');
   });
+  function allSwitch(value)
+  {
+    if(value)
+    {
+      document.getElementById('switch-1').checked=true;
+      callClient(31,1,2);
+      document.getElementById('switch-2').checked=true;
+      callClient(31,2,2);
+      document.getElementById('switch-3').checked=true;
+      callClient(31,3,2);
+      document.getElementById('switch-4').checked=true;
+      callClient(31,4,2);
+      document.getElementById('switch-5').checked=true;
+      callClient(31,5,2);
+    }
+    else
+    {
+      document.getElementById('switch-1').checked=false;
+      callClient(31,1,1);
+      document.getElementById('switch-2').checked=false;
+      callClient(31,2,1);
+      document.getElementById('switch-3').checked=false;
+      callClient(31,3,1);
+      document.getElementById('switch-4').checked=false;
+      callClient(31,4,1);
+      document.getElementById('switch-5').checked=false;
+      callClient(31,5,1);
+    }
+  }
 </script>

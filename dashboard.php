@@ -1,7 +1,7 @@
 <?php
 require_once 'core/init.php';
 $user = new User();
-//if ($user->isLoggedIn())
+if ($user->isLoggedIn())
 {
 	include 'paginas/header.php';
 ?>
@@ -29,7 +29,7 @@ $user = new User();
                         <div class="switch">
                           <label>
                             Off
-                            <input id="switch-1" onchange="if(this.checked){callClient(31,1,2);}else{callClient(31,1,1);}" type="checkbox">
+                            <input id="31-1" onchange="if(this.checked){callClient(31,1,2);}else{callClient(31,1,1);}" type="checkbox">
                             <span class="lever"></span>
                             On
                           </label>
@@ -43,7 +43,7 @@ $user = new User();
                         <div class="switch">
                           <label>
                             Off
-                            <input id="switch-2" onchange="if(this.checked){callClient(31,2,2);}else{callClient(31,2,1);}" type="checkbox">
+                            <input id="31-2" onchange="if(this.checked){callClient(31,2,2);}else{callClient(31,2,1);}" type="checkbox">
                             <span class="lever"></span>
                             On
                           </label>
@@ -57,7 +57,7 @@ $user = new User();
                         <div class="switch">
                           <label>
                             Off
-                            <input id="switch-3" onchange="if(this.checked){callClient(31,3,2);}else{callClient(31,3,1);}" type="checkbox">
+                            <input id="31-3" onchange="if(this.checked){callClient(31,3,2);}else{callClient(31,3,1);}" type="checkbox">
                             <span class="lever"></span>
                             On
                           </label>
@@ -71,7 +71,7 @@ $user = new User();
                         <div class="switch">
                           <label>
                             Off
-                            <input id="switch-4" onchange="if(this.checked){callClient(31,4,2);}else{callClient(31,4,1);}" type="checkbox">
+                            <input id="31-4" onchange="if(this.checked){callClient(31,4,2);}else{callClient(31,4,1);}" type="checkbox">
                             <span class="lever"></span>
                             On
                           </label>
@@ -107,65 +107,15 @@ $user = new User();
             <div class="card-content center-align">
               <span class="card-title black-text">Historial</span>
               <div class="scroll">
-                <table class="striped centered">
+                <table class="striped centered" id="tableLog">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Hora</th>
-                      <th>Desc.</th>
+                      <th>Fecha</th>
+                      <th>Desc</th>
+                      <th>Mensaje</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>12:05:54</td>
-                      <td>Problema</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -177,10 +127,10 @@ $user = new User();
 <?php
 	include 'paginas/footer.php';
 }
-/*else
+else
 {
 	include 'login.php';
-}*/
+}
 ?>
 <script type="text/javascript">
   $( document ).ready(function() {
@@ -193,29 +143,29 @@ $user = new User();
   {
     if(value)
     {
-      document.getElementById('switch-1').checked=true;
+      document.getElementById('31-1').checked=true;
       callClient(31,1,2);
-      document.getElementById('switch-2').checked=true;
+      document.getElementById('31-2').checked=true;
       callClient(31,2,2);
-      document.getElementById('switch-3').checked=true;
+      document.getElementById('31-3').checked=true;
       callClient(31,3,2);
-      document.getElementById('switch-4').checked=true;
+      document.getElementById('31-4').checked=true;
       callClient(31,4,2);
-      document.getElementById('switch-5').checked=true;
-      callClient(31,5,2);
+      /*document.getElementById('31-5').checked=true;
+      callClient(31,5,2);*/
     }
     else
     {
-      document.getElementById('switch-1').checked=false;
+      document.getElementById('31-1').checked=false;
       callClient(31,1,1);
-      document.getElementById('switch-2').checked=false;
+      document.getElementById('31-2').checked=false;
       callClient(31,2,1);
-      document.getElementById('switch-3').checked=false;
+      document.getElementById('31-3').checked=false;
       callClient(31,3,1);
-      document.getElementById('switch-4').checked=false;
+      document.getElementById('31-4').checked=false;
       callClient(31,4,1);
-      document.getElementById('switch-5').checked=false;
-      callClient(31,5,1);
+      /*document.getElementById('31-5').checked=false;
+      callClient(31,5,1);*/
     }
   }
 </script>

@@ -41,7 +41,6 @@
 						$apiKeyName = Config::get('session/api_key_name');
 						Session::put($sessionName, $json->id);
 						Session::put($apiKeyName, $json->api_key);
-						echo "$apiKeyName";
 						Redirect::to('index.php');
 				}
 			}

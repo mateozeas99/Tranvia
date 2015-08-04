@@ -22,3 +22,7 @@ flex: 1 0 auto;
 	overflow: auto;
 	height: 200px;
 }
+#action_zone
+{
+	display: none;
+}

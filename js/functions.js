@@ -23,7 +23,13 @@ function callClient(id, device, value){
 
 function initial(page)
 {
-	$.ajax({
+	if(page=='camera')
+	{
+		loadCam('192.168.88.230','3030');
+	}
+	else if(page=='dashboard')
+	{
+		$.ajax({
 		url: '../api/v1/status',
 		headers: {
 			"Authorization": "Basic " + btoa(user + ":" + apiKey)
@@ -51,6 +57,7 @@ function initial(page)
 	        console.log(data.responseText);
 	    }
 	});
+	}
 }
 function connectWebSocket()
 {
@@ -74,4 +81,8 @@ function connectWebSocket()
 	    	document.getElementById(obj.id).checked=false;
 	    }
 	};
+}
+
+function loadCam (ip,port){
+	$('#cam_draw').attr('src','http://'+ip+':'+port+'/videostream.cgi?user=admin&pwd=maradona68&resolution=32&rate=0');
 }

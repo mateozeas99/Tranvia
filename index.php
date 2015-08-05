@@ -22,13 +22,13 @@ if ($user->isLoggedIn())
             </div>
           </div>
         </div>
-        <div class="col s12 m6 l4">
+        <!--<div class="col s12 m6 l4">
           <div class="card white hoverable">
             <div class="card-content center-align">
 	            <a href="camera.php">
 	          		<img src="img/camera.png" width="64">
-				</a>
-				<br>
+				      </a>
+				      <br>
               	<span class="card-title black-text">Cámaras</span>
               	<p>Cámaras</p>
             </div>
@@ -36,7 +36,7 @@ if ($user->isLoggedIn())
             	<a href="camera.php" class="waves-effect white-text btn amber">Ingresar</a>
             </div>
           </div>
-        </div>
+        </div>-->
         <div class="col s12 m6 l4">
           <div class="card white hoverable">
             <div class="card-content center-align">

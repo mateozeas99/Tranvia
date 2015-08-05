@@ -2,9 +2,9 @@ var conn=null;
 
 function callClient(id, device, value){
 	var now = new Date();
-	var command = '{"address":"'+id+'","values":[{"device":"'+device+'","value":"'+value+'"}]}';
-	conn.send(command);
-	var msg;
+	//var command = '{"address":"'+id+'","values":[{"device":"'+device+'","value":"'+value+'"}]}';
+	//conn.send(command);
+	/*var msg;
 	if(value==2)
 	{
 		msg="Encendido";
@@ -13,10 +13,9 @@ function callClient(id, device, value){
 	{
 		msg="Apagado";
 	}
-	
-	appendLog(now, "Electro valvula "+device, msg,3);
+	appendLog(now, "Electro valvula "+device, msg,3);*/
 	//conn.send('{"id":"switch-'+device+'","value":"'+value+'"}');
-	/*var data = {"id":id,"device":device,"value":value};
+	var data = {"id":id,"device":device,"value":value};
 	$.ajax({
 		url: '../api/v1/send',
 		headers: {
@@ -32,13 +31,11 @@ function callClient(id, device, value){
         error: function (data) {
             console.log(data.responseText);
         }
-	});*/
-	
+	});
 }
 
 function initial(page)
 {
-	console.log(now);
 	if(page=='camera')
 	{
 		loadCam('192.168.88.230','3030');
@@ -76,13 +73,13 @@ function initial(page)
 function connectWebSocket()
 {
 	if(conn==null)
-		conn = new WebSocket('ws://10.0.1.18:4040');
+		//conn = new WebSocket('ws://10.0.1.18:4040');
 		//conn = new WebSocket('ws://192.168.88.246:4040');
-		//conn = new WebSocket('ws://11.22.33.45:4040');
+		conn = new WebSocket('ws://11.22.33.45:4040');
 		//conn = new WebSocket('ws://127.0.0.1:4040');
 	conn.onopen = function(e) {
 	    console.log("Connection established!");
-	    Materialize.toast("Conexión Establecida", 4000);
+	    Materialize.toast("Conexión Establecida", 2000);
 	};
 	conn.onmessage = function(e) {
 		//{"address":"31","values":[{"device":"1","value":"0"},{"device":"2","value":"0"},{"device":"3","value":"0"},{"device":"4","value":"0"}]}
@@ -144,7 +141,7 @@ function appendLog(date, desc, msg, priority)
 	var tableRef = document.getElementById('tableLog').getElementsByTagName('tbody')[0];
 
   	// Insert a row in the table at row index 0
-  	var newRow   = tableRef.insertRow(tableRef.rows.length);
+  	var newRow   = tableRef.insertRow(0);
 
   	// Insert a cell in the row at index 0
   	var newCellDate  = newRow.insertCell(0);
